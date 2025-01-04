@@ -5,14 +5,15 @@ class Solution:
             if not stack:
                 stack.append(i)
             else:
-                if i>0:
+                if i>0: # incoming asteroids is +ve, if top of stack is +ve then no collision, also if top is -ve still no collision
                     stack.append(i)
                 else:
-                    if not stack or stack[-1]<0:
+                    if not stack or stack[-1]<0: # both asteroids are ne
                         stack.append(i)
-                    elif abs(stack[-1])==abs(i):
+                    elif stack[-1]==-i: # equal value asteroids collide
                         stack.pop(-1)
                     else:
+                        # Collision is sure here
                         while stack and (stack[-1]>0 and abs(stack[-1])<abs(i)):
                             stack.pop(-1)
                         if not stack:
