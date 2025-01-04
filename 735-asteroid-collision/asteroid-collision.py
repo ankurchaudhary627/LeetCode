@@ -15,6 +15,7 @@ class Solution:
                     else:
                         # Collision is sure here
                         while stack and (stack[-1]>0 and abs(stack[-1])<abs(i)):
+                            # keep popping until top element is > incoming asteroid
                             stack.pop(-1)
                         if not stack:
                             stack.append(i)
