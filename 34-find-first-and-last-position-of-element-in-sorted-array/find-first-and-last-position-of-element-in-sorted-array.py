@@ -7,9 +7,9 @@ class Solution:
                 idx=mid
                 end=mid-1
             elif arr[mid]<val:
-                start+=1
+                start=mid+1
             else:
-                end-=1
+                end=mid-1
         return idx
 
     def binSearch2(self, start, end, arr, val):
@@ -20,9 +20,9 @@ class Solution:
                 idx=mid
                 start=mid+1
             elif arr[mid]<val:
-                start+=1
+                start=mid+1
             else:
-                end-=1
+                end=mid-1
         return idx
 
     def searchRange(self, nums: List[int], target: int) -> List[int]:
