@@ -8,7 +8,7 @@ class Solution:
                 if i>0: # incoming asteroids is +ve, if top of stack is +ve then no collision, also if top is -ve still no collision
                     stack.append(i)
                 else:
-                    if stack[-1]<0: # both asteroids are ne
+                    if stack[-1]<0: # both asteroids are -ve
                         stack.append(i)
                     elif stack[-1]==-i: # equal value asteroids collide
                         stack.pop(-1)
